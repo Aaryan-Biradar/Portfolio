@@ -122,25 +122,19 @@ a {
 }
 
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(10px,5px);
-} 
-
-.hamburger-icon.open span:nth-child(2) {
     opacity: 0;
 } 
 
+.hamburger-icon.open span:nth-child(2) {
+    transform: translate(0px, 3.7px) rotate(45deg);
+}
+ 
+
+.hamburger-icon.open span:nth-child(3) {
+    transform: translate(0px, -3.7px) rotate(-45deg);
+} 
+
 .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px,-5px);
-}
-
-.hamburger-icon span:first-child{
-    transform: none;
-}
-
-.hamburger-icon span:first-child{
-    opacity: 1;
-}
-
-.hamburger-icon span:first-child{
-    transform: none;
+    opacity: 0;
+    
 }
