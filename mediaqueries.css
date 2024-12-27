@@ -1,0 +1,8 @@
+@media screen and (max-width: 1200px) {               /* if screen less then 1200px switch to hambuger nav */
+    #destop-nav {
+        display: none;
+    }
+    #hamburger-nav {
+        display: flex;
+    }
+}
