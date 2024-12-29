@@ -187,6 +187,38 @@ section {
 .section__text__p2 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
+    color: rgb(85,85,85);
+}
+
+h2 {
+    color: rgb(85,85,85);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h2 span {
+    color: rgb(85,85,85);
+    position: relative;
+    box-sizing: border-box;
+}
+
+h2 span::before {
+    content: "";
+    height: 30px;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    background: rgb(85,85,85);
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+h2 span.stop-blinking::before {
+    animation: none;
+}
+
+@keyframes blink {
+    50% { opacity: 0 }
 }
 
 .title {
