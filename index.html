@@ -12,81 +12,90 @@
 <body>
     <script src="script.js" defer></script>
 
-    <nav id="destop-nav">
-        <div class="logo"> <a href="#main">Aaryan Biradar</a>
-        </div>
-
-
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-
-    </nav>
-
-    <nav id="hamburger-nav">
-        <div class="logo"> <a href="#main">Aaryan Biradar</a>
-        </div>
-
-        <div class="hamburger-menu">
-
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+    <main class="document-container">
+        <!-- Document Header (Replaces Nav) -->
+        <header class="doc-header">
+            <h3 class="doc-logo"><a href="#main">Aaryan Biradar</a></h3>
+            <div class="doc-links">
+                <a href="#about">About</a> &middot;
+                <a href="#experience">Experience</a> &middot;
+                <a href="#projects">Projects</a> &middot;
+                <a href="#contact">Contact</a>
             </div>
+        </header>
 
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <section id="about" class="hero-section">
+            <div class="hero-header">
+                <div class="hero-text">
+                    <p class="section__text__p1">Hello World, I'm</p>
+                    <h1 class="title">Aaryan Biradar</h1>
+                    <h2 class="section__text__p2">I'm <span></span></h2>
+                    <p class="intro-text">Computer Science student at Carleton University passionate about building
+                        impactful software.</p>
+
+                    <div id="social-container">
+                        <img src="./assets/linkedin.png" alt="My LinkedIn" class="icon"
+                            onclick="location.href='https://www.linkedin.com/in/aaryan-biradar/'">
+                        <img src="./assets/github.png" alt="My Github" class="icon"
+                            onclick="location.href='https://github.com/Aaryan-Biradar'">
+                        <img src="./assets/email.png" alt="My Email" class="icon"
+                            onclick="location.href='mailto:aaryan.biradar@example.com'">
+                    </div>
+                </div>
+
+                <div class="hero-pic">
+                    <img src="./assets/profile-pic.png" alt="Aaryan Biradar Profile Picture">
+                </div>
             </div>
-
-        </div>
-
-    </nav>
-
-    <section id="profile">
-        <div class="section__text">
-            <div class="home-page-text">
-                <p class="section__text__p1">Hello World, I'm</p>
-                <h1 class="title">Aaryan Biradar</h1>
-                <h2 class="section__text__p2">I'm <span></span></h2>
-                <p class="intro-text">Computer Science student at Carleton University passionate about building
-                    impactful software.</p>
-            </div>
-
 
             <div class="btn-container">
                 <button class="btn btn-color-2" onclick="window.open('./assets/Aaryan_Biradar_Resume.pdf')">Open
                     CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Me</button>
             </div>
+        </section>
 
-            <div id="social-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn" class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/aaryan-biradar/'">
-                <img src="./assets/github.png" alt="My Github" class="icon"
-                    onclick="location.href='https://github.com/Aaryan-Biradar'">
-
+        <section id="experience" class="doc-section">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineering Intern</h3>
+                        <p class="timeline-subtitle">Company Name | May 2025 - Aug 2025</p>
+                        <ul class="timeline-details">
+                            <li>Developed and maintained core features of the company's main web application.</li>
+                            <li>Collaborated with a team of developers using Agile methodologies.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <section id="projects" class="doc-section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project Name 1</h3>
+                    <p>A brief description of this project showcasing skills in React, Node.js, and MongoDB.</p>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Name 2</h3>
+                    <p>Another awesome project built with modern web technologies, focusing on clean UI/UX.</p>
+                    <a href="#" class="project-link">View Project &rarr;</a>
+                </div>
+            </div>
+        </section>
 
-        <div class="section__pic-container">
-            <img src="./assets/profile-pic.png" alt="Aaryan Biradar Profile Picture">
-        </div>
-    </section>
+        <section id="contact" class="doc-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <p>I'm currently looking for new opportunities. My inbox is always open.</p>
+            <button class="btn btn-color-1" style="margin-top: 1rem;"
+                onclick="location.href='mailto:aaryan.biradar@example.com'">Say Hello</button>
+        </section>
 
-
-    </section>
-
+    </main>
 
 </body>
 
