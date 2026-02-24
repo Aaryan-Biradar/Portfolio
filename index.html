@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,10 @@
     <script src="script.js" defer></script>
 
     <nav id="destop-nav">
-        <div
-            class="logo"> <a href="#main">Aaryan Biradar</a>
+        <div class="logo"> <a href="#main">Aaryan Biradar</a>
         </div>
 
-    
+
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -30,12 +29,11 @@
     </nav>
 
     <nav id="hamburger-nav">
-        <div
-            class="logo"> <a href="#main">Aaryan Biradar</a>
+        <div class="logo"> <a href="#main">Aaryan Biradar</a>
         </div>
 
         <div class="hamburger-menu">
-            
+
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -55,30 +53,38 @@
     </nav>
 
     <section id="profile">
+        <div class="section__text">
+            <div class="home-page-text">
+                <p class="section__text__p1">Hello World, I'm</p>
+                <h1 class="title">Aaryan Biradar</h1>
+                <h2 class="section__text__p2">I'm <span></span></h2>
+                <p class="intro-text">Computer Science student at Carleton University passionate about building
+                    impactful software.</p>
+            </div>
+
+
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/Aaryan_Biradar_Resume.pdf')">Open
+                    CV</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            </div>
+
+            <div id="social-container">
+                <img src="./assets/linkedin.png" alt="My LinkedIn" class="icon"
+                    onclick="location.href='https://www.linkedin.com/in/aaryan-biradar/'">
+                <img src="./assets/github.png" alt="My Github" class="icon"
+                    onclick="location.href='https://github.com/Aaryan-Biradar'">
+
+            </div>
+
+        </div>
+
         <div class="section__pic-container">
             <img src="./assets/profile-pic.png" alt="Aaryan Biradar Profile Picture">
         </div>
+    </section>
 
-        <div class="section__text">
-            <div class="home-page-text"> 
-                <p class="section__text__p1">Hello World, I'm</p>
-                <h1 class="title">Aaryan Biradar</h1>
-                <h2 class="section__text__p2">I'm <span></span></h2> 
-             </div>
-                     
 
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/Aaryan_Biradar_Resume.pdf')">Open CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
-            </div>
-            
-            <div id="social-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn" class="icon" onclick="location.href='https://www.linkedin.com/in/aaryan-biradar/'">
-                <img src="./assets/github.png" alt="My Github" class="icon" onclick="location.href='https://github.com/Aaryan-Biradar'">
-
-            </div>
-
-        </div>
     </section>
 
 
