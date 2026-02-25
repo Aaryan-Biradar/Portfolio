@@ -7,8 +7,12 @@ function toggleMenu() {
 
 
 const dynamicText = document.querySelector("h2 span");
-const words = ["a software engineer.", "a full-stack developer.", "an AI/ML enthusiast.", "a problem solver.", "excited to bring ideas to life!"];
-// Variables to track the position and deletion status of the word
+const words = [
+  "builder",
+  "ML enthusiast",
+  "gym-goer chasing logic and PRs",
+  "fan of One Piece"
+];// Variables to track the position and deletion status of the word
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -20,11 +24,11 @@ const typeEffect = () => {
     if (!isDeleting && charIndex < currentWord.length) {
         // If condition is true, type the next character
         charIndex++;
-        setTimeout(typeEffect, 200);
+        setTimeout(typeEffect, 40);
     } else if (isDeleting && charIndex > 0) {
         // If condition is true, remove the previous character
         charIndex--;
-        setTimeout(typeEffect, 100);
+        setTimeout(typeEffect, 25);
     } else {
         // If word is deleted then switch to the next word
         isDeleting = !isDeleting;

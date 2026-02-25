@@ -80,19 +80,19 @@ a,
 /* Document Sections */
 
 .doc-section {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid #eaeaea;
 }
 
 section.doc-section:last-of-type {
     border-bottom: none;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .section-title {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #1a1a1a;
     letter-spacing: -0.5px;
 }
@@ -100,20 +100,20 @@ section.doc-section:last-of-type {
 /* Hero Stacking */
 
 .hero-section {
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
     border-bottom: 1px solid #eaeaea;
 }
 
 .hero-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.hero-text {
+.hero-titles {
     flex: 1;
 }
 
@@ -189,7 +189,7 @@ section {
 
 .section__text__p2 {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #555555;
     font-weight: 400;
 }
@@ -197,9 +197,23 @@ section {
 .intro-text {
     font-size: 1.1rem;
     color: #666;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     line-height: 1.7;
     font-weight: 400 !important;
+}
+
+.inline-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: #ccc;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+.inline-link:hover {
+    color: #1a1a1a;
+    text-decoration-color: #1a1a1a;
 }
 
 h2 {
@@ -328,8 +342,8 @@ h2 span.stop-blinking::before {
 .section-subtitle {
     font-size: 1.1rem;
     color: #666;
-    margin-bottom: 3rem;
-    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: -0.5rem;
 }
 
 .exp-list {
