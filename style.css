@@ -476,3 +476,99 @@ h2 span.stop-blinking::before {
     opacity: 1;
     margin-top: 0.5rem;
 }
+
+/* --- PROJECTS SECTION --- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    /* since it's an <a> */
+    color: inherit;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.project-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #eaeaea;
+    /* placeholder bg while loading */
+}
+
+.project-media img,
+.project-media video,
+.project-media iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border: none;
+    pointer-events: none;
+    /* Prevents interaction with YT player, allows clicking the card to go to GitHub */
+}
+
+/* Zoom media on card hover */
+.project-card:hover .project-media img,
+.project-card:hover .project-media video,
+.project-card:hover .project-media iframe {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-header h3 {
+    font-size: 1.25rem;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.project-icon {
+    width: 22px;
+    height: 22px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    opacity: 1;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+    flex-grow: 1;
+    /* Pushes the tech-stack down to the bottom */
+}
