@@ -34,12 +34,14 @@
                         impactful software.</p>
 
                     <div id="social-container">
-                        <img src="./assets/linkedin.png" alt="My LinkedIn" class="icon"
-                            onclick="location.href='https://www.linkedin.com/in/aaryan-biradar/'">
-                        <img src="./assets/github.png" alt="My Github" class="icon"
-                            onclick="location.href='https://github.com/Aaryan-Biradar'">
-                        <img src="./assets/email.png" alt="My Email" class="icon email-icon"
-                            onclick="location.href='mailto:aaryan.biradar@example.com'">
+                        <img src="./assets/Icons/linkedin.png" alt="My LinkedIn profile" class="icon"
+                            onclick="window.open('https://www.linkedin.com/in/aaryan-biradar/', '_blank')" />
+                        <img src="./assets/Icons/github.png" alt="My GitHub profile" class="icon"
+                            onclick="window.open('https://github.com/Aaryan-Biradar', '_blank')" />
+                        <img src="./assets/Icons/email.png" alt="My Email" class="icon email-icon"
+                            onclick="location.href='mailto:aaryan.biradar@example.com'" />
+                        <img src="./assets/Icons/CVicon.png" alt="My Resume/CV" class="icon"
+                            onclick="window.open('./assets/Aaryan_Biradar_Resume.pdf', '_blank')" />
                     </div>
                 </div>
 
@@ -130,7 +132,7 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3>Amplify</h3>
-                            <img src="./assets/github.png" alt="GitHub Repository" class="project-icon">
+                            <img src="./assets/Icons/github.png" alt="GitHub Repository" class="project-icon">
                         </div>
                         <p class="project-desc">A platform that integrates Git with real-time incident responses and
                             analytics.</p>
@@ -153,7 +155,7 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3>TutorLink</h3>
-                            <img src="./assets/github.png" alt="GitHub Repository" class="project-icon">
+                            <img src="./assets/Icons/github.png" alt="GitHub Repository" class="project-icon">
                         </div>
                         <p class="project-desc">A peer‑to‑peer tutoring platform connecting university students with
                             top-performing tutors from their own campus.</p>
@@ -168,12 +170,23 @@
             </div>
         </section>
 
-        <section id="contact" class="doc-section">
-            <h2 class="section-title">Get in Touch</h2>
-            <p>I'm currently looking for new opportunities. My inbox is always open.</p>
-            <button class="btn btn-color-1" style="margin-top: 1rem;"
-                onclick="location.href='mailto:aaryan.biradar@example.com'">Say Hello</button>
-        </section>
+        <footer id="contact" class="doc-footer">
+            <p>&copy; 2026 Aaryan Biradar</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/aaryan-biradar/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/Icons/linkedin.png" alt="LinkedIn" class="footer-icon">
+                </a>
+                <a href="https://github.com/Aaryan-Biradar" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/Icons/github.png" alt="GitHub" class="footer-icon">
+                </a>
+                <a href="mailto:aaryan.biradar@example.com">
+                    <img src="./assets/Icons/email.png" alt="Email" class="footer-icon">
+                </a>
+                <a href="./assets/Aaryan_Biradar_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/Icons/CVicon.png" alt="CV Document" class="footer-icon">
+                </a>
+            </div>
+        </footer>
 
     </main>
 

@@ -44,4 +44,10 @@
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .doc-footer {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        text-align: center;
+    }
 }
