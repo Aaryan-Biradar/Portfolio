@@ -92,9 +92,25 @@ section.doc-section:last-of-type {
 .section-title {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
     color: #1a1a1a;
     letter-spacing: -0.5px;
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.section-hint {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 400;
+    font-style: italic;
+    white-space: nowrap;
+    margin-left: 1rem;
 }
 
 /* Hero Stacking */
@@ -868,7 +884,7 @@ h2 span.stop-blinking::before {
 .modal-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
     margin-bottom: 2rem;
     padding-right: 2rem;
     /* space for close button */
