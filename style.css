@@ -101,7 +101,7 @@ section.doc-section:last-of-type {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 1rem;
+    margin-bottom: 0.1%;
 }
 
 .section-hint {
@@ -503,7 +503,7 @@ h2 span.stop-blinking::before {
 
 /* --- NESTED ROLES TIMELINE --- */
 .nested-roles {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-left: 0;
     padding-left: 0;
 }
@@ -516,7 +516,7 @@ h2 span.stop-blinking::before {
     transition: background 0.2s ease, transform 0.2s ease, padding 0.4s ease;
     border-radius: 8px;
     margin-left: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
 }
 
 .role-item:last-child {
@@ -555,8 +555,8 @@ h2 span.stop-blinking::before {
     left: 30px;
     /* Perfectly centered under the 60px company logo */
     top: 1.45rem;
-    bottom: -2.45rem;
-    /* Extend exactly to the next item's dot top (1rem margin + 1.45rem next dot offset) */
+    bottom: -1.65rem;
+    /* Extend exactly to the next item's dot top (0.2rem margin + 1.45rem next dot offset) */
     width: 2px;
     background-color: #e0e0e0;
     transform: translateX(-50%);
@@ -673,7 +673,7 @@ h2 span.stop-blinking::before {
 }
 
 .exp-card:hover .exp-content {
-    padding-bottom: 2rem;
+    padding-bottom: 0.90rem;
 }
 
 
