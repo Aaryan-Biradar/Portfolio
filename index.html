@@ -49,16 +49,12 @@
         </section>
 
         <section id="experience" class="doc-section">
-            <h2 class="section-title">Journey</h2>
-            <p class="section-subtitle">What I've learned and where I've been.</p>
+            <h2 class="section-title">What I've learned and where I've been.</h2>
 
             <div class="exp-list">
-                <!-- Example Card 1 -->
+                <!-- Ciena Experience Card (Nested Roles) -->
                 <div class="exp-card">
-                    <div class="exp-bg"
-                        style="background-image: url('./assets/Expirences/CienaBanner.png'); background-position: right 20%; background-size: 55%;">
-                    </div>
-                    <!-- Ciena Banner -->
+                    <!-- Ciena Banner (Moved to individual roles) -->
 
                     <div class="exp-content">
                         <div class="exp-header">
@@ -68,19 +64,78 @@
                             </div>
                             <div class="exp-titles">
                                 <div class="exp-title-row">
-                                    <h3>Software Engineer Intern</h3>
-                                    <span class="exp-date">May 2025 – Present</span>
+                                    <h3>Ciena</h3>
+                                    <span class="exp-date">10 months</span>
                                 </div>
-                                <p>Ciena</p>
+                                <p>Ottawa, Ontario, Canada</p>
                             </div>
                         </div>
 
-                        <div class="exp-details">
-                            <div class="tech-stack">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
+                        <!-- Nested Roles Timeline -->
+                        <div class="nested-roles">
+                            <!-- Software Engineer Intern -->
+                            <div class="role-item" data-modal-title="Software Engineer Intern"
+                                data-modal-company="Ciena" data-modal-dates="May 2025 - Present"
+                                data-modal-bullets="Evaluated LLM code generation metrics and presented findings to VP-leadership to guide AI roadmaps.||Engineered a multi-threaded Python tool to identify 5,000+ dead functions in large-scale codebases.||Automated Jenkins CI/CD checks and resolved Protocol Buffer errors for stable Agile deployments.||Boosted Core Library test coverage by 20% across 50k+ lines using automated unit test tools.">
+                                <div class="role-bg"
+                                    style="background-image: url('./assets/Expirences/TempBanner.png'); background-position: right 20%; background-size: 55%;">
+                                </div>
+                                <div class="role-header">
+                                    <h4>Software Engineer Intern</h4>
+                                    <span class="role-date">Incoming May 2026</span>
+                                </div>
+                                <p class="role-summary">Evaluated LLM metrics and engineered multi-threaded tools for
+                                    large-scale codebases.</p>
+                                <div class="role-tech-stack">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">LLMs</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Applied ML Intern -->
+                            <div class="role-item" data-modal-title="Applied Machine Learning Engineering Intern"
+                                data-modal-company="Ciena" data-modal-dates="Jan 2025 - Sep 2025"
+                                data-modal-bullets="Developed and deployed machine learning models to optimize network traffic routing, achieving a 15% reduction in latency.||Collaborated with cross-functional teams to integrate AI-driven telemetry analysis into core product offerings.||Implemented data pipelines using Apache Spark and Airflow to process terabytes of network logs daily.">
+                                <div class="role-bg"
+                                    style="background-image: url('./assets/Expirences/CienaBanner2.jpg'); background-position: right 20%; background-size: 55%;">
+                                </div>
+                                <div class="role-header">
+                                    <h4>Applied Machine Learning Engineering Intern</h4>
+                                    <span class="role-date">Sep 2025 - Present</span>
+                                </div>
+                                <p class="role-summary">Developed machine learning models and Apache Spark data
+                                    pipelines to optimize network traffic routing.</p>
+                                <div class="role-tech-stack">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Apache Spark</span>
+                                        <span class="tech-tag">Airflow</span>
+                                        <span class="tech-tag">Machine Learning</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Backend Intern -->
+                            <div class="role-item" data-modal-title="Software Engineer and Tools Developer Intern"
+                                data-modal-company="Ciena" data-modal-dates="May 2024 - Jan 2025"
+                                data-modal-bullets="Overhauled the entire API Deprecation Streaming Pipeline. Achieved a better API Breaking Changes Data flow.||Optimized RESTful microservices reducing average response time by 30%.||Participated in agile ceremonies and contributed to technical design documentation.">
+                                <div class="role-bg"
+                                    style="background-image: url('./assets/Expirences/CienaBanner.png'); background-position: right 25%; background-size: 55%;">
+                                </div>
+                                <div class="role-header">
+                                    <h4>Software Engineer and Tools Developer Intern</h4>
+                                    <span class="role-date">May 2025 - Aug 2025</span>
+                                </div>
+                                <p class="role-summary">Created dead-code detection tools and evaluated LLM generation metrics</p>
+                                <div class="role-tech-stack">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">RESTful APIs</span>
+                                        <span class="tech-tag">Microservices</span>
+                                        <span class="tech-tag">Agile</span>
+                                        <span class="tech-tag">Jenkins CI/CD</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -88,7 +143,9 @@
             </div>
 
             <!-- Shopify Experience Card -->
-            <div class="exp-card">
+            <div class="exp-card" data-modal-title="Active Member" data-modal-company="Shopify Builder Sunday"
+                data-modal-dates="Jan 2026 - Present"
+                data-modal-bullets="Led organizing efforts for Shopify Builder Sunday's new Ottawa Chapter.||Facilitated technical workshops and networking events for local developers and entrepreneurs.||Collaborated with industry partners to secure sponsorships and venue spaces.">
                 <!-- Placeholder background (can use solid color or another image if preferred) -->
                 <div class="exp-bg"
                     style="background-color: #f1f1f1; background-position: right 20%; background-size: cover;">
@@ -101,7 +158,7 @@
                         </div>
                         <div class="exp-titles">
                             <div class="exp-title-row">
-                                <h3>Founder of Ottawa Chapter</h3>
+                                <h3>Active Member</h3>
                                 <span class="exp-date">Jan 2026 - Present</span>
                             </div>
                             <p>Shopify Builder Sunday</p>
@@ -110,17 +167,18 @@
 
                     <div class="exp-details">
                         <div class="tech-stack">
-                            <span class="tech-tag">Ruby on Rails</span>
-                            <span class="tech-tag">GraphQL</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Community Building</span>
+                            <span class="tech-tag">Event Planning</span>
+                            <span class="tech-tag">Networking</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Carleton Experience Card -->
-            <div class="exp-card">
+            <div class="exp-card" data-modal-title="Peer Mentor" data-modal-company="Carleton University"
+                data-modal-dates="Sept 2025 - Dec 2025"
+                data-modal-bullets="Orchestrated weekly technical reviews for 15+ peers in Data Structures, Algorithms, and Statistics.||Achieved 20% higher peer grades through structured whiteboard sessions and collaborative problem-solving.||Mastered complex logic and algorithmic foundations while mentoring students on technical coursework.">
                 <div class="exp-bg"
                     style="background-color: #f1f1f1; background-position: right 20%; background-size: cover;">
                 </div>
@@ -142,17 +200,19 @@
 
                     <div class="exp-details">
                         <div class="tech-stack">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Algorithms</span>
                             <span class="tech-tag">Data Structures</span>
+                            <span class="tech-tag">Algorithms</span>
+                            <span class="tech-tag">Statistics</span>
+                            <span class="tech-tag">Mentorship</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Example Card 2 -->
-            <div class="exp-card">
+            <div class="exp-card" data-modal-title="Founding Technical Instructor"
+                data-modal-company="Dovercourt Recreation Centre (Non-Profit)" data-modal-dates="Jan 2024 – Jun 2024"
+                data-modal-bullets="Designed a 20-week Python curriculum covering Recursion and Big-O notation for 25+ youth students.||Founded and launched a youth coding program to provide accessible technical education within the community.||Mentored 25+ students in computational thinking and foundational programming through hands-on Python labs.">
                 <div class="exp-bg"
                     style="background-image: url('./assets/Expirences/DCRbanner.png'); background-position: right 40%; background-size: 60%;">
                 </div>
@@ -165,19 +225,19 @@
                         </div>
                         <div class="exp-titles">
                             <div class="exp-title-row">
-                                <h3>Founder & Lead Instructor</h3>
+                                <h3>Founding Technical Instructor</h3>
                                 <span class="exp-date">Jan 2024 – Jun 2024</span>
                             </div>
-                            <p>Dovercourt Recreation Center</p>
+                            <p>Dovercourt Recreation Centre (Non-Profit)</p>
                         </div>
                     </div>
 
                     <div class="exp-details">
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Recursion</span>
+                            <span class="tech-tag">Big-O Notation</span>
+                            <span class="tech-tag">Curriculum Design</span>
                         </div>
                     </div>
                 </div>
@@ -257,6 +317,24 @@
         </footer>
 
     </main>
+
+    <!-- Experience Details Modal -->
+    <div id="exp-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <div>
+                    <h2 id="modal-title">Role Title</h2>
+                    <p id="modal-company">Company</p>
+                </div>
+                <span id="modal-date" class="modal-date-badge">Date</span>
+            </div>
+            <div class="modal-body">
+                <ul id="modal-bullets">
+                </ul>
+            </div>
+        </div>
+    </div>
 
 </body>
 

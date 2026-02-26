@@ -360,6 +360,7 @@ h2 span.stop-blinking::before {
     /* Solid background so text doesn't wash out */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
+    cursor: pointer;
 }
 
 /* Background image placeholder that reveals on hover (image set inline per card) */
@@ -380,7 +381,24 @@ h2 span.stop-blinking::before {
     mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 85%, black 100%);
 }
 
-
+/* Individual Role Background (for nested timelines) */
+.role-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: right center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    /* Behind the content but inside the role item */
+    border-radius: 8px;
+    /* Match the role-item hover radius */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 85%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 85%, black 100%);
+}
 
 /* Ensure content stays above background */
 .exp-content {
@@ -445,17 +463,13 @@ h2 span.stop-blinking::before {
 
 .exp-date {
     margin-left: auto;
-    color: #444;
+    color: #888;
     font-size: 0.85rem;
     font-weight: 500;
-    padding: 0.1rem 0.4rem;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    background: transparent;
     transition: all 0.4s ease;
 }
 
-.exp-card:hover .exp-date {
+.exp-card:not(:has(.nested-roles)):hover .exp-date {
     opacity: 0;
     pointer-events: none;
 }
@@ -469,6 +483,139 @@ h2 span.stop-blinking::before {
     padding-left: calc(60px + 1.5rem);
     /* Align with text */
     margin-top: 0;
+}
+
+/* --- NESTED ROLES TIMELINE --- */
+.nested-roles {
+    margin-top: 1.5rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.role-item {
+    position: relative;
+    padding: 1rem 0 1rem calc(60px + 1rem);
+    /* Aligns role text perfectly with the main header text */
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, padding 0.4s ease;
+    border-radius: 8px;
+    margin-left: 0;
+    margin-bottom: 1rem;
+}
+
+.role-item:last-child {
+    margin-bottom: 0;
+}
+
+.role-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.role-item:hover .role-bg {
+    opacity: 1;
+}
+
+/* Timeline Dot */
+.role-item::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    /* Perfectly centered under the 60px company logo */
+    top: 1.45rem;
+    /* Align roughly with title text center (1rem top padding + 0.45rem line height offset) */
+    width: 10px;
+    height: 10px;
+    background-color: #b0b0b0;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+/* Vertical Connecting Line */
+.role-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    /* Perfectly centered under the 60px company logo */
+    top: 1.45rem;
+    bottom: -2.45rem;
+    /* Extend exactly to the next item's dot top (1rem margin + 1.45rem next dot offset) */
+    width: 2px;
+    background-color: #e0e0e0;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Darken dot on hover */
+.role-item:hover::before {
+    background-color: #666;
+}
+
+.role-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+    padding-left: 0.5rem;
+}
+
+.role-header h4 {
+    margin: 0;
+    color: #1a1a1a;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.role-date {
+    font-size: 0.85rem;
+    color: #888;
+    transition: all 0.4s ease;
+}
+
+.role-summary {
+    position: relative;
+    z-index: 2;
+    margin: 0.4rem 0 0.5rem 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    transition: all 0.4s ease;
+}
+
+.role-item:hover .role-date,
+.role-item:hover .role-summary {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.role-type {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Specific Role Tech Stack (hidden by default, reveals on role hover) */
+.role-tech-stack {
+    position: absolute;
+    bottom: 1.2rem;
+    left: calc(60px + 1.5rem);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.role-item:hover .role-tech-stack {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .tech-stack {
@@ -658,4 +805,106 @@ h2 span.stop-blinking::before {
 
 .footer-icon:hover {
     opacity: 1;
+}
+
+/* --- EXPERIENCE MODAL --- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay.show .modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #1a1a1a;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-right: 2rem;
+    /* space for close button */
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin: 0 0 0.4rem 0;
+}
+
+.modal-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+.modal-date-badge {
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.modal-body ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #444;
+}
+
+.modal-body li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.modal-body li:last-child {
+    margin-bottom: 0;
 }
