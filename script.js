@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCompany = document.getElementById('modal-company');
     const modalDate = document.getElementById('modal-date');
     const modalBullets = document.getElementById('modal-bullets');
+    const modalTechStack = document.getElementById('modal-tech-stack');
     const closeBtn = document.querySelector('.modal-close');
 
     // Open Modal
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const company = item.getAttribute('data-modal-company');
             const dates = item.getAttribute('data-modal-dates');
             const bulletsStr = item.getAttribute('data-modal-bullets');
+            const techStr = item.getAttribute('data-modal-tech');
 
             if (title && company && dates && bulletsStr) {
                 // Populate data
@@ -84,6 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         modalBullets.appendChild(li);
                     }
                 });
+
+                // Add tech stack
+                modalTechStack.innerHTML = '';
+                if (techStr) {
+                    const techList = techStr.split('||'); // Use || to separate tags like bullets
+                    techList.forEach(t => {
+                        if (t.trim()) {
+                            const span = document.createElement('span');
+                            span.className = 'tech-tag';
+                            span.textContent = t.trim();
+                            modalTechStack.appendChild(span);
+                        }
+                    });
+                    modalTechStack.style.display = 'flex';
+                } else {
+                    const techStackEl = item.querySelector('.tech-stack');
+                    if (techStackEl && techStackEl.innerHTML.trim() !== '') {
+                        modalTechStack.innerHTML = techStackEl.innerHTML;
+                        modalTechStack.style.display = 'flex'; // Reset display if it was hidden
+                    } else {
+                        modalTechStack.style.display = 'none'; // Hide if there's no tech stack
+                    }
+                }
 
                 // Show modal
                 modal.classList.add('show');
