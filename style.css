@@ -377,6 +377,10 @@ h2 span.stop-blinking::before {
     /* Solid background so text doesn't wash out */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
+    cursor: default;
+}
+
+.exp-card:not(:has(.nested-roles)) {
     cursor: pointer;
 }
 
@@ -421,7 +425,7 @@ h2 span.stop-blinking::before {
 .exp-content {
     position: relative;
     z-index: 2;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem 0.90rem;
     transition: padding 0.4s ease;
 }
 
@@ -433,6 +437,17 @@ h2 span.stop-blinking::before {
 
 .exp-logo {
     flex-shrink: 0;
+}
+
+.company-link {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.company-link:hover {
+    text-decoration: underline;
+    opacity: 0.7;
 }
 
 .mock-logo {
@@ -491,15 +506,28 @@ h2 span.stop-blinking::before {
     pointer-events: none;
 }
 
-/* Details section (hidden by default) */
-.exp-details {
-    max-height: 0;
+/* Experience card one-liner summary */
+.exp-summary {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.3rem 0 0 calc(60px + 1rem);
+    transition: opacity 0.4s ease;
+}
+
+.exp-card:not(:has(.nested-roles)):hover .exp-summary {
     opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.4s ease;
-    padding-left: calc(60px + 1.5rem);
-    /* Align with text */
-    margin-top: 0;
+    pointer-events: none;
+}
+
+/* Details section (hidden by default) — overlays the summary on hover */
+.exp-details {
+    position: absolute;
+    left: 0;
+    bottom: 0.75rem;
+    opacity: 0;
+    padding-left: calc(60px + 2rem);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 /* --- NESTED ROLES TIMELINE --- */
@@ -638,33 +666,27 @@ h2 span.stop-blinking::before {
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    gap: 0.15rem;
+    margin-top: 0%;
+}
+
+.tech-tag:not(:last-child)::after {
+    content: ',';
 }
 
 .tech-tag {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #444;
-    background: #ffffff;
-    /* Solid white background to block the image underneath */
-    padding: 0.1rem 0.5rem;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.tech-tag:hover {
-    background: #1a1a1a;
-    color: #fff;
-    transform: translateY(-2px);
+    color: #888;
+    background: none;
+    padding: 0;
+    border: none;
+    transition: color 0.3s ease;
 }
 
 /* --- HOVER STATES --- */
 
 .exp-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     border-color: transparent;
     background: #fafafa;
 }
@@ -673,19 +695,13 @@ h2 span.stop-blinking::before {
     opacity: 1;
 }
 
-.exp-card:hover .exp-content {
-    padding-bottom: 0.90rem;
-}
-
 
 
 
 
 .exp-card:hover .exp-details {
-    max-height: 150px;
-    /* Arbitrary enough height to reveal content */
     opacity: 1;
-    margin-top: 0.5rem;
+    pointer-events: auto;
 }
 
 /* --- SECTION INTRO (Pill, Header, Subtitle) --- */
