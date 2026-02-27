@@ -80,9 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBullets.innerHTML = '';
                 const bullets = bulletsStr.split('||');
                 bullets.forEach(b => {
-                    if (b.trim()) {
+                    const trimmedBullet = b.trim();
+                    if (trimmedBullet) {
                         const li = document.createElement('li');
-                        li.textContent = b.trim();
+                        // Parse simple markdown bold: **text** -> <strong>text</strong>
+                        const parsedHtml = trimmedBullet.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                        li.innerHTML = parsedHtml;
                         modalBullets.appendChild(li);
                     }
                 });
