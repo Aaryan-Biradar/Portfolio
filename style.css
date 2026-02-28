@@ -767,7 +767,6 @@ h2 span.stop-blinking::before {
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -785,18 +784,13 @@ h2 span.stop-blinking::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transform: scale(1.05);
     border: none;
     pointer-events: none;
     /* Prevents interaction with YT player, allows clicking the card to go to GitHub */
 }
 
-/* Zoom media on card hover */
-.project-card:hover .project-media img,
-.project-card:hover .project-media video,
-.project-card:hover .project-media iframe {
-    transform: scale(1.05);
-}
+
 
 .project-content {
     padding: 1.5rem;
@@ -826,7 +820,7 @@ h2 span.stop-blinking::before {
     transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-icon {
+.project-icon:hover {
     opacity: 1;
 }
 
