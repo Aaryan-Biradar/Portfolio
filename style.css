@@ -217,6 +217,7 @@ section {
     margin-bottom: 0.5rem;
     line-height: 1.7;
     font-weight: 400 !important;
+    padding-top: 1rem;
 }
 
 .inline-link {
